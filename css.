@@ -1,0 +1,252 @@
+/* use google fonts to get fonts. You can select multiple types and import them into your CSS */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald&display=swap');
+
+/*use this as a default setting for margin padding and border. It will put everything to zero and then you can style accordingly as you go through*/
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+body{
+  font-family: Lato;
+  color: #777777;
+}
+
+/*this part is all to do with adding a logo at the top of the page and a nav bar, note that Ive had to use multiple child elements etc to get the correct posistions*/
+
+h2{
+  font-family: Oswald;
+  text-transform: uppercase;
+  color: #555555;
+  letter-spacing: 4px;
+}
+
+#menu,#logo{
+  line-height: 75px; /*when you are designing a web page use multiplication to figure out how the whole style of the page should be sized, eg 75, 150, 225 are all multiplications of 75px*/
+  
+}
+
+#logo{
+  float: left;
+  font-size: 200%;
+}
+
+#menu{
+  font-size: 110%;
+  list-style-type: none;
+  letter-spacing: 4px;
+}
+
+#menu li{
+  float: right;
+  margin-right: 30px;
+  
+}
+
+#menu a{
+  text-decoration: none;
+  color: inherit; /*look more into inherit and how it works*/
+  
+}
+
+#menu a:hover{
+  border-bottom: 1px solid #777777;
+}
+
+.active{
+  border-bottom: 1px solid #777777;
+}
+
+/*this area is to do with adding a "hero image"*/
+
+#heroimg{
+  height:600px;
+  width: 100%;
+  background: url(http://codeinstitute.s3.amazonaws.com/FundamentalsProjects/HTML-CSS/main-image.png) no-repeat center center;
+  
+  /* to creat animation in css use @keyframes, then from there use from and to. then use the desired style and it will do what youve asked until it completes the "to" function */
+  animation-name: hero-zoom;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+/* use overflow to insure any part of an image that has reached where you dont want it to be and set it to hidden by putting it into a div you can style this to what you want it to. This id is for that div */ 
+#hero-outer{
+   height:600px;
+   width: 100%;
+   overflow: hidden;
+   position: relative;
+
+}
+
+/*this is the animation described above. you create your own id here (not in the HTML) then design accordingly*/
+@keyframes hero-zoom{
+  from{
+    transform: scale(1);
+  }
+
+  to{
+    transform: scale(1.1);
+  }
+}
+
+
+/*This area will help explain how to add text on hero img*/
+
+#hero-text, #hero-text h2{
+
+    color: #ffffff;
+}
+/*This is the styling and the placing, note that it has been put absolote as posistion to its parent container to stick it into it.*/
+#hero-text{
+  font-size:130%;
+  font-family: Oswald;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  width: 300px;
+  height: 200px;
+  padding-top: 40px;
+  padding-left: 10px;
+  background-color: rgba(241, 109, 107, .7);
+  bottom: 30px;
+  right: 150px;
+  position: absolute;
+}
+
+/*Club Ethos part, three divs created to style left right and center, 600px height to keep in terms with hero img use background colors to see where the div is covering to help with styling*/
+
+#club-ethos{
+  height: 600px;
+
+}
+
+#left-about{
+  padding-top: 30px;
+  width: 33%;
+  float: left;
+  
+}
+
+#right-about{
+  padding-top: 30px;
+  width: 33%;
+  float: right;
+ 
+}
+
+#center-about{
+  width: 33%;
+  margin: 0 auto;/* this will atou center the div. Its used because there is no center option for float*/
+  
+
+
+}
+/*this will underline the headings*/
+hr{
+  border-top: 1px solid #777777;
+  width: 100%;
+  margin: 5px, 0;
+
+}
+
+/* You loat the text right because you want it to wrap the center image*/
+.left-about-heading{
+  width: 50%;
+  float: right;
+  line-height: 20px; /*this shelps making it easier to read*/
+  clear: both; /*this will make the content stack as youre asking left and right to be clear*/
+  margin-bottom: 50px;
+  }
+
+  .right-about-heading{
+  width: 50%;
+  float: left;
+  line-height: 20px; /*this shelps making it easier to read*/
+  clear: both; /*this will make the content stack as youre asking left and right to be clear*/
+  margin-bottom: 50px;
+
+  }
+
+  .right-about-heading h2{
+    text-align: right;
+  }
+
+  .right-about-heading p{
+    text-align: right;
+  }
+
+  #welcome {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 280%;
+
+  }
+
+  #circle-container{
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    border-radius: 50%; /*This will create a circle container. it only works for containers with equal width and height*/
+    margin: 0 auto;
+
+  }
+      /*the imaged used roughly matche 300 by 300 which will help centering the picture*/
+  #circle-cover-bg{
+    background: url(http://codeinstitute.s3.amazonaws.com/FundamentalsProjects/HTML-CSS/video-mask.png)  no-repeat center center;/*center center will center the image horizontally and vertically*/
+    height: 100%;
+    border-radius: 50%; 
+  }
+
+  #times{
+    background-image: url(http://codeinstitute.s3.amazonaws.com/FundamentalsProjects/HTML-CSS/dublin-city.png);
+    background-repeat: no-repeat;
+    background-size: cover; /*will cover the container once its set*/
+    background-position: center;
+    width: 100%;
+    overflow: hidden;
+
+  }
+
+  /* This is to style the containers holding the times. note that because there are 4 divs the size is set to 19% to stretch across all 4 and allow space */
+  #times div{
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
+    width: 19%;
+    height: 300px;
+    float: left;
+    padding: 30px 0 0 10px;
+    text-align: center;
+    margin: 2px;
+  }
+
+/* this is to change the color of id times child h2 elements to make it more visable */
+  #times h2{
+    color: #fafafa;
+  }
+
+  footer{
+    height: 150px;
+    
+  }
+
+  .social-networks{
+    text-align: center;
+  }
+
+  .social-networks li{
+    display: inline;
+  }
+
+  .social-networks i{
+    font-size: 160%;
+    margin: 1%;
+    padding: 5%;
+    color: #777777
+  }
